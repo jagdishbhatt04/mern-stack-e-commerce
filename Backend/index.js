@@ -1,8 +1,8 @@
-// server.js
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./Router/userRouter.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 
@@ -16,6 +16,14 @@ mongoose
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
+
+const corssOptions = {
+  origin: 'http://localhost:5173',
+  optionsSuccessStatus:200,
+  Credentials:true
+}
+
+app.use(cors(corssOptions))
 
 // Use cookie-parser middleware
 app.use(cookieParser());
