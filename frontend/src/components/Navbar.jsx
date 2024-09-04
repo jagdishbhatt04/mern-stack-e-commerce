@@ -4,7 +4,7 @@ import { faHeart, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-so
 import { faUser as faRegularUser } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import './AuthForm.css'; // Add this for additional styling
+import './AuthForm.css'; 
 
 const Navbar = () => {
   const [showAuthForm, setShowAuthForm] = useState(false);
