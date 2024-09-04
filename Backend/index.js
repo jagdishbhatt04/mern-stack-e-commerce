@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./Router/userRouter.js";
+import productRoutes from './Router/productRoutes.js'; 
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -30,6 +31,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", userRoutes);
+app.use('/', productRoutes);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
